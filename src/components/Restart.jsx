@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { getWin } from '../utils/getWin';
 
-export const Restart = ({ array , handleClick }) => {
-  
-
-
+export const Restart = ({ array, handleClick }) => {
 
   const showButton = () => {
     let flag = false;
     array.forEach(element => {
-      if(element === null) flag = true;
+      if (element === null) flag = true;
     });
     return flag;
   }
 
-
   const onHandleClick = () => {
     handleClick();
   };
+
+
 
   return (
     <>

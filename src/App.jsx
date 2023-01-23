@@ -7,7 +7,6 @@ const TURN = {
     O: 'o'
 };
 
-
 export const App = () => {
 
     const [element, setElement] = useState(Array(9).fill(null));
@@ -16,13 +15,12 @@ export const App = () => {
     
     const turned = first ? TURN.X : TURN.O;
     
-    
         const onHandleClick = ( index ) => {
-            set(!first);
             let board = [...element];
+            if(board[index] !== null) return; //en caso se vuelva a seleccionar una casilla con elemento dentro
+            set(!first);
             board[index] = turned;
             setElement(board);
-            
         };
 
     return (
@@ -33,7 +31,7 @@ export const App = () => {
                     //uso del "_" para evitar usar el cierto parámetro
                     element.map((item, index) => {
                         return (
-                            <Square key={index} updateTurn={() => onHandleClick(index)} children={item} />
+                            <Square key={index}  updateTurn={() => onHandleClick(index)} children={item} />
                         )
                                
                     })
