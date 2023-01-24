@@ -1,21 +1,22 @@
 import React from 'react'
 
 
-export const Restart = ({  handleClick, isThereWinner }) => {
+export const Restart = ({ array, handleClick, isThereWinner }) => {
 
-  // const showButton = () => {
-  //   let flag = false;
-  //   array.forEach(element => {
-  //     if (element === null) flag = true;
-  //   });
-  //   return flag;
-  // }
+  const showButton = () => {
+    let flag = false;
+    array.forEach(element => {
+      if (element === null) flag = true;
+    });
+    return flag;
+  }
 
 
 
   return (
     <>
-      <div  id="btnRestart" className={isThereWinner()? 'notFull' : 'restart'} onClick={handleClick} >
+      <div id="btnRestart" className={isThereWinner() ? showButton() ? 'notFull' : 'restart' : 'restart'}
+        onClick={handleClick} >
         Restart
       </div>
     </>

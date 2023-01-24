@@ -59,13 +59,19 @@ export const App = () => {
                     })
                 }
             </section>
-            <Turn isSelect={first}
+            <Turn isSelect={
+                first
+            }
                 element={turned}
             />
-            <Restart handleClick={
-                handleRestartCLick
-            }
-                isThereWinner={getWinner} />
+            <Restart
+                array={element}
+                handleClick={
+                    handleRestartCLick
+                }
+                isThereWinner={
+                    getWinner
+                } />
         </main>
     );
 };
