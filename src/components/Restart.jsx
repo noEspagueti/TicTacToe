@@ -1,25 +1,21 @@
 import React from 'react'
-import { getWin } from '../utils/getWin';
 
-export const Restart = ({ array, handleClick }) => {
 
-  const showButton = () => {
-    let flag = false;
-    array.forEach(element => {
-      if (element === null) flag = true;
-    });
-    return flag;
-  }
+export const Restart = ({  handleClick, isThereWinner }) => {
 
-  const onHandleClick = () => {
-    handleClick();
-  };
+  // const showButton = () => {
+  //   let flag = false;
+  //   array.forEach(element => {
+  //     if (element === null) flag = true;
+  //   });
+  //   return flag;
+  // }
 
 
 
   return (
     <>
-      <div className={showButton() ? 'notFull' : 'restart'} onClick={onHandleClick} >
+      <div className={isThereWinner()? 'notFull' : 'restart'} onClick={handleClick} >
         Restart
       </div>
     </>

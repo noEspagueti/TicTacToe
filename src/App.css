@@ -80,8 +80,7 @@ body {
 
 .restart {
     cursor: pointer;
-    border: none;
-    background: #202020;
+    background: #7f7eff;
     color: #fff;
     padding: 20px;
     font-family: "Impact";
@@ -90,7 +89,7 @@ body {
 }
 
 .restart:hover {
-    background-color: #7f7eff;
+    background-color: #72e539;
     border-radius: 4px;
 }
 

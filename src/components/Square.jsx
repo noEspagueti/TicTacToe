@@ -2,10 +2,10 @@ import React from 'react'
 
 
 
-export const Square = ({updateTurn, children }) => {
+export const Square = ({ updateTurn, children , disabled}) => {
 
   return (
-    <button  className='zone' onClick={updateTurn}  >
+    <button className='zone' onClick={updateTurn} disabled={!disabled()} >
       {children}
     </button>
   )
