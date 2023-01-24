@@ -77,3 +77,21 @@ export const isThereWinner = (array) => {
     return pos; //retorna la posicion del elemento
 
 }
+
+
+
+export const showWinner = ( positions = [] ) => {
+    const winner = document.querySelectorAll('.zone');
+    for (let i = 0; i < positions.length; i++) {
+        winner[positions[i]].classList.add('winner');        
+        // winner[positions[i]].style = "background: #72e539";        
+    }
+}
+
+
+export const clickRestart = () => {
+    const winner = document.querySelectorAll('.winner');
+    winner.forEach(item => {
+        item.classList.remove('winner')
+    });
+}

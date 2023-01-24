@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Square, Turn, Restart } from './components';
 import { useCustomState } from '../Hooks/useCustomState';
-import { isThereWinner } from './utils/getWin';
+import { isThereWinner, showWinner, clickRestart } from './utils/getWin';
 
 const TURN = {
     X: 'x',
@@ -28,11 +28,18 @@ export const App = () => {
     const getWinner = () => {
         let result = true;
         if (isThereWinner(element)) {
-          result = false;
+            const positions = isThereWinner(element);
+            showWinner(positions);
+            result = false;
         }
         return result;
     }
 
+
+    const handleRestartCLick = () => {
+        setElement(Array(9).fill(null));
+        clickRestart();
+    }
 
     return (
         <main className='board'>
@@ -42,14 +49,23 @@ export const App = () => {
                     //uso del "_" para evitar usar el cierto parámetro
                     element.map((item, index) => {
                         return (
-                            <Square key={index} updateTurn={() => onHandleClick(index)} children={item} disabled={getWinner} />
+                            <Square key={index}
+                                updateTurn={() => onHandleClick(index)}
+                                children={item}
+                                disabled={getWinner}
+                            />
                         )
 
                     })
                 }
             </section>
-            <Turn isSelect={first} element={turned} />
-            <Restart handleClick={() => setElement(Array(9).fill(null))} isThereWinner={getWinner} />
+            <Turn isSelect={first}
+                element={turned}
+            />
+            <Restart handleClick={
+                handleRestartCLick
+            }
+                isThereWinner={getWinner} />
         </main>
     );
 };

@@ -42,10 +42,9 @@ body {
     display: grid;
     place-content: center;
     cursor: pointer;
-    border-radius: 5px;
     font-size: 4rem;
     font-family: "Impact";
-    background-color: #202020;
+    background: none;
     color: #fff;
 }
 
@@ -80,7 +79,7 @@ body {
 
 .restart {
     cursor: pointer;
-    background: #7f7eff;
+    background: #72e539;
     color: #fff;
     padding: 20px;
     font-family: "Impact";
@@ -89,10 +88,15 @@ body {
 }
 
 .restart:hover {
-    background-color: #72e539;
+    background-color: #7f7eff;
     border-radius: 4px;
 }
 
 .notFull {
     display: none;
+}
+
+
+.winner{
+    background: #72e539!important;
 }

@@ -15,7 +15,7 @@ export const Restart = ({  handleClick, isThereWinner }) => {
 
   return (
     <>
-      <div className={isThereWinner()? 'notFull' : 'restart'} onClick={handleClick} >
+      <div  id="btnRestart" className={isThereWinner()? 'notFull' : 'restart'} onClick={handleClick} >
         Restart
       </div>
     </>
